@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>TechCo Meeting Feedback Survey</title>
+  <link rel="stylesheet" href="https://unpkg.com/survey-core/defaultV2.min.css">
+  <script src="https://unpkg.com/survey-core/survey.core.min.js"></script>
+</head>
+<body>
+  <div id="surveyContainer"></div>
+  <script>
+    // Paste your survey JSON here
+    const surveyJSON = {
+      "title": "TechCo Committee Meeting Feedback Survey",
+      "description": "Meeting Date: March 06, 2025. Purpose: To gather detailed insights from committee members to enhance the quality, relevance, and structure of our meetings based on the TechCo Agenda.",
+      "pages": [
+        {
+          "name": "page1",
+          "elements": [
+            {
+              "type": "rating",
+              "name": "overall_effectiveness",
+              "title": "Overall Effectiveness: On a scale of 1–5 (1 = Not Effective, 5 = Extremely Effective), how would you rate the overall effectiveness of the meeting in addressing our key topics?",
+              "rateMin": 1,
+              "rateMax": 5
+            },
+            {
+              "type": "rating",
+              "name": "agenda_relevance",
+              "title": "Agenda Relevance: How well did the meeting agenda reflect our current priorities and challenges?",
+              "rateMin": 1,
+              "rateMax": 5
+            },
+            {
+              "type": "rating",
+              "name": "presentation_quality",
+              "title": "Presentation Quality: How effective were the individual presentations/reports (e.g., Cybersecurity Report, Regulatory Updates, Data Privacy, IT Risk Management) in conveying critical information?",
+              "rateMin": 1,
+              "rateMax": 5
+            },
+            {
+              "type": "comment",
+              "name": "value_of_agenda_items",
+              "title": "Value of Agenda Items: Which agenda items (e.g., Cybersecurity Report, IT Risk Management review, Change Management System discussion) did you find most valuable and why?"
+            },
+            {
+              "type": "comment",
+              "name": "detailed_feedback_specific_topics",
+              "title": "Detailed Feedback on Specific Topics: Please elaborate on the clarity and relevance of the cybersecurity and regulatory update sections. Are there areas (e.g., KPI dashboards, incident reporting, policy updates) where you’d like more depth or clarification?"
+            }
+          ]
+        },
+        {
+          "name": "page2",
+          "elements": [
+            {
+              "type": "rating",
+              "name": "structure_flow",
+              "title": "Structure and Flow: How would you rate the overall structure and flow of the meeting?",
+              "rateMin": 1,
+              "rateMax": 5
+            },
+            {
+              "type": "dropdown",
+              "name": "meeting_duration",
+              "title": "Meeting Duration: Was the length of the meeting too short, just right, or too long?",
+              "choices": ["Too Short", "Just Right", "Too Long"]
+            },
+            {
+              "type": "rating",
+              "name": "engagement_interaction",
+              "title": "Engagement and Interaction: How effective was the meeting in fostering discussion, interaction, and engagement among committee members?",
+              "rateMin": 1,
+              "rateMax": 5
+            },
+            {
+              "type": "comment",
+              "name": "review_minutes_action_points",
+              "title": "Review of Minutes and Action Points: How did the review of previous minutes and action points contribute to your understanding of ongoing initiatives? What improvements would you suggest for this segment?"
+            },
+            {
+              "type": "comment",
+              "name": "presentation_format_suggestions",
+              "title": "Presentation Format Suggestions: Do you have any suggestions on how the presentations (e.g., data dashboards, risk reviews, policy updates) could be structured or formatted to improve clarity and engagement?"
+            }
+          ]
+        },
+        {
+          "name": "page3",
+          "elements": [
+            {
+              "type": "dropdown",
+              "name": "current_frequency_satisfaction",
+              "title": "Current Frequency Satisfaction: How satisfied are you with the current frequency of our committee meetings?",
+              "choices": ["Too Frequent", "Just Right", "Not Frequent Enough"]
+            },
+            {
+              "type": "dropdown",
+              "name": "preferred_frequency",
+              "title": "Preferred Frequency: What meeting frequency would you prefer going forward?",
+              "choices": ["Monthly", "Bi-monthly", "Quarterly", "Other"]
+            },
+            {
+              "type": "comment",
+              "name": "factors_influencing_frequency",
+              "title": "Factors Influencing Frequency: What factors (e.g., pace of regulatory changes, cybersecurity incident trends, IT risk developments) should influence how often we meet?"
+            },
+            {
+              "type": "comment",
+              "name": "frequency_agenda_alignment",
+              "title": "Frequency and Agenda Alignment: How well does the current meeting frequency allow us to address key agenda items such as policy approvals and infrastructure standardization?"
+            }
+          ]
+        },
+        {
+          "name": "page4",
+          "elements": [
+            {
+              "type": "comment",
+              "name": "general_comments",
+              "title": "General Comments: Do you have any additional comments or suggestions to help us improve the overall effectiveness and value of our meetings?"
+            },
+            {
+              "type": "comment",
+              "name": "outcome_actionability",
+              "title": "Outcome and Actionability: Reflecting on discussions like IT Risk Management, Change Management, and the presentation of new policies, how can we better ensure that meeting outcomes translate into actionable results?"
+            },
+            {
+              "type": "comment",
+              "name": "future_agenda_items",
+              "title": "Future Agenda Items: Are there any new topics or agenda items (e.g., emerging cybersecurity trends, advanced training modules, deeper dives into policy updates) you would like to see included in future meetings?"
+            }
+          ]
+        }
+      ]
+    };
+
+    // Create and render the survey
+    const survey = new Survey.Model(surveyJSON);
+    survey.render("surveyContainer");
+  </script>
+</body>
+</html>
